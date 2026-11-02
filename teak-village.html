@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Teak Village Managed Farmland | Viseshta Group Hyderabad</title>
+  <meta name="description" content="Teak Village by Viseshta Group: Eco-luxury managed teakwood farmland estate. High timber appreciation paired with peaceful weekend farmhouse living." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-white text-slate-900 antialiased selection:bg-blue-100 selection:text-blue-900">
+
+  <!-- Mobile Full-Screen Menu Drawer -->
+  <div id="mobile-menu" class="fixed inset-0 z-50 bg-[#121110]/98 backdrop-blur-2xl text-[#f5f2eb] flex flex-col justify-between p-6 sm:p-8 translate-x-full transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] pointer-events-none overflow-y-auto">
+    <!-- Top Bar: Logo & Close Button -->
+    <div class="flex items-center justify-between border-b border-white/10 pb-4 shrink-0">
+      <a href="index.html" class="flex items-center mobile-menu-close">
+        <div class="bg-white/95 px-3 py-1.5 rounded-lg flex items-center shadow-sm">
+          <img src="logo.png" alt="Viseshta Group" class="h-6 w-auto object-contain" />
+        </div>
+      </a>
+      <button id="close-menu-btn" class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-white hover:text-black transition duration-300" aria-label="Close navigation menu">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      </button>
+    </div>
+
+    <!-- Navigation Items in Clean Vertical Drawer (Exact Order) -->
+    <div class="flex flex-col gap-1 my-6 text-xl sm:text-2xl font-serif">
+      <!-- 1. Home -->
+      <a href="index.html" class="mobile-menu-close hover:text-[#bfa181] transition flex items-center justify-between py-2.5 border-b border-white/5">
+        <span>Home</span> <span class="text-xs font-sans tracking-widest text-white/40">01</span>
+      </a>
+
+      <!-- 2. Projects (Accordion) -->
+      <div class="border-b border-white/5 py-1">
+        <button type="button" id="mobile-projects-btn" class="mobile-accordion-btn w-full text-left text-[#bfa181] transition flex items-center justify-between py-2.5 cursor-pointer">
+          <span class="flex items-center gap-2">
+            <span>Projects</span>
+            <span class="text-xs font-sans tracking-widest text-[#bfa181]">02</span>
+          </span>
+          <svg class="mobile-accordion-chevron w-4 h-4 text-white/60 transition-transform duration-300" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+          </svg>
+        </button>
+        <!-- Projects Accordion Content -->
+        <div id="mobile-projects-accordion" class="mobile-accordion-content pl-3 flex flex-col gap-2 font-sans text-sm">
+          <a href="projects.html#ongoing" class="mobile-menu-close py-1.5 text-white/70 hover:text-white flex items-center gap-2 border-l border-white/10 pl-3">
+            <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+            <span>Ongoing Projects</span>
+          </a>
+          <a href="invesmart.html" class="mobile-menu-close py-1.5 text-white/70 hover:text-white flex items-center gap-2 border-l border-white/10 pl-3">
+            <span class="w-1.5 h-1.5 rounded-full bg-blue-400"></span>
+            <span>Investment Projects</span>
+          </a>
+          <a href="palm-valley.html" class="mobile-menu-close py-1.5 text-white/70 hover:text-white flex items-center gap-2 border-l border-white/10 pl-3">
+            <span class="w-1.5 h-1.5 rounded-full bg-[#bfa181]"></span>
+            <span>Palm Valley</span>
+          </a>
+          <a href="projects.html#upcoming" class="mobile-menu-close py-1.5 text-white/70 hover:text-white flex items-center gap-2 border-l border-white/10 pl-3">
+            <span class="w-1.5 h-1.5 rounded-full bg-amber-400"></span>
+            <span>Upcoming Projects</span>
+          </a>
+          <a href="projects.html#completed" class="mobile-menu-close py-1.5 text-white/70 hover:text-white flex items-center gap-2 border-l border-white/10 pl-3">
+            <span class="w-1.5 h-1.5 rounded-full bg-purple-400"></span>
+            <span>Completed Projects</span>
+          </a>
+          <a href="teak-village.html" class="mobile-menu-close py-1.5 text-white/70 hover:text-white flex items-center gap-2 border-l border-white/10 pl-3">
+            <span class="w-1.5 h-1.5 rounded-full bg-[#bfa181]"></span>
+            <span>Teak Village</span>
+          </a>
+          <a href="vistara-valley.html" class="mobile-menu-close py-1.5 text-white/70 hover:text-white flex items-center gap-2 border-l border-white/10 pl-3">
+            <span class="w-1.5 h-1.5 rounded-full bg-[#bfa181]"></span>
+            <span>Vistara Valley</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- 3. Invesmart -->
+      <a href="invesmart.html" class="mobile-menu-close hover:text-[#bfa181] transition flex items-center justify-between py-2.5 border-b border-white/5">
+        <span>Invesmart</span> <span class="text-xs font-sans tracking-widest text-white/40">03</span>
+      </a>
+
+      <!-- 4. Gallery -->
+      <a href="gallery.html" class="mobile-menu-close hover:text-[#bfa181] transition flex items-center justify-between py-2.5 border-b border-white/5">
+        <span>Gallery</span> <span class="text-xs font-sans tracking-widest text-white/40">04</span>
+      </a>
+
+      <!-- 5. About Us -->
+      <a href="about.html" class="mobile-menu-close hover:text-[#bfa181] transition flex items-center justify-between py-2.5 border-b border-white/5">
+        <span>About Us</span> <span class="text-xs font-sans tracking-widest text-white/40">05</span>
+      </a>
+
+      <!-- 6. Contact Us -->
+      <a href="contact.html" class="mobile-menu-close hover:text-[#bfa181] transition flex items-center justify-between py-2.5 border-b border-white/5">
+        <span>Contact Us</span> <span class="text-xs font-sans tracking-widest text-white/40">06</span>
+      </a>
+
+      <!-- 7. Blogs -->
+      <a href="blog.html" class="mobile-menu-close hover:text-[#bfa181] transition flex items-center justify-between py-2.5 border-b border-white/5">
+        <span>Blogs</span> <span class="text-xs font-sans tracking-widest text-white/40">07</span>
+      </a>
+
+      <!-- 8. Careers -->
+      <a href="careers.html" class="mobile-menu-close hover:text-[#bfa181] transition flex items-center justify-between py-2.5 border-b border-white/5">
+        <span>Careers</span> <span class="text-xs font-sans tracking-widest text-white/40">08</span>
+      </a>
+    </div>
+
+    <!-- Bottom Action & Contact Info in Drawer -->
+    <div class="border-t border-white/10 pt-4 space-y-4 shrink-0">
+      <a href="#contact" onclick="openContactModal(event); closeMobileMenu();" class="contact-trigger w-full py-3.5 rounded-full text-xs tracking-[0.2em] uppercase font-semibold text-black bg-gradient-to-r from-[#bfa181] via-[#d6bc9f] to-[#bfa181] hover:from-[#d6bc9f] hover:to-[#bfa181] flex items-center justify-center gap-2 shadow-lg transition">
+        <span>Enquire Now</span>
+        <span>↗</span>
+      </a>
+      <div class="flex items-center justify-between text-[11px] tracking-widest uppercase text-white/50 pt-2">
+        <span>Viseshta Group</span>
+        <span>Est. 2018</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Top Navigation Header (Sticky Luxury Header) -->
+  <header id="site-header" class="sticky top-0 z-40 px-3 sm:px-6 lg:px-8 py-3 transition-all duration-500 bg-[#0e0d0b]/90 backdrop-blur-xl border-b border-white/10 shadow-[0_4px_30px_rgba(0,0,0,0.5)]">
+    <div class="max-w-7xl mx-auto flex items-center justify-between gap-2 xl:gap-4">
+      <!-- Left: Viseshta Group Logo -->
+      <a href="index.html" class="flex items-center shrink-0 group">
+        <div class="bg-white/95 hover:bg-white transition-all duration-300 px-3.5 py-1.5 rounded-lg flex items-center shadow-sm border border-white/15 group-hover:scale-[1.02]">
+          <img src="logo.png" alt="Viseshta Group" class="h-6 sm:h-7 w-auto object-contain" />
+        </div>
+      </a>
+
+      <!-- Center: Desktop Navigation Links (Single horizontal row with exact 8 categories) -->
+      <nav class="hidden lg:flex items-center gap-0.5 xl:gap-1 px-3 py-1.5 rounded-full nav-glass border border-white/10 text-[11px] xl:text-[12px] tracking-[0.14em] uppercase text-white/80 whitespace-nowrap flex-nowrap shrink-0 shadow-lg" aria-label="Main Navigation">
+        <!-- 1. Home -->
+        <a href="index.html" class="nav-item-link px-2.5 xl:px-3.5 py-1.5 rounded-full transition text-white/80 hover:text-white hover:bg-white/10 font-medium">Home</a>
+
+        <!-- 2. Projects Dropdown -->
+        <div class="relative group/dropdown" id="projects-dropdown-container">
+          <button type="button" id="projects-dropdown-btn" class="nav-item-link px-2.5 xl:px-3.5 py-1.5 rounded-full transition flex items-center gap-1.5 cursor-pointer text-[#bfa181] bg-white/15 font-semibold active shadow-xs ring-1 ring-[#bfa181]/40" aria-expanded="false" aria-haspopup="true">
+            <span>Projects</span>
+            <svg class="dropdown-chevron w-3 h-3 text-white/60 transition-transform duration-300" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+
+          <!-- Dropdown Menu -->
+          <div id="projects-dropdown-menu" class="dropdown-menu absolute top-full left-1/2 -translate-x-1/2 pt-3.5 opacity-0 pointer-events-none translate-y-2 transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] z-50">
+            <div class="w-64 bg-[#121110]/95 backdrop-blur-2xl border border-[#bfa181]/35 rounded-2xl p-2.5 shadow-[0_25px_60px_rgba(0,0,0,0.85),0_0_35px_rgba(191,161,129,0.18)] ring-1 ring-white/10">
+              <div class="px-3 py-1.5 text-[9px] tracking-[0.25em] uppercase text-[#bfa181] font-mono border-b border-white/5 mb-1 flex items-center justify-between">
+                <span>Developments</span>
+                <span class="w-1.5 h-1.5 rounded-full bg-[#bfa181]"></span>
+              </div>
+              <div class="flex flex-col gap-0.5 font-sans">
+                <a href="projects.html#ongoing" class="dropdown-link group/item flex items-center justify-between px-3 py-2 rounded-xl text-xs text-white/85 hover:text-white hover:bg-white/10 transition-colors">
+                  <span class="flex items-center gap-2">
+                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+                    <span>Ongoing Projects</span>
+                  </span>
+                  <span class="text-[10px] text-[#bfa181] opacity-0 group-hover/item:opacity-100 group-hover/item:translate-x-0.5 transition-all">↗</span>
+                </a>
+                <a href="invesmart.html" class="dropdown-link group/item flex items-center justify-between px-3 py-2 rounded-xl text-xs text-white/85 hover:text-white hover:bg-white/10 transition-colors">
+                  <span class="flex items-center gap-2">
+                    <span class="w-1.5 h-1.5 rounded-full bg-blue-400"></span>
+                    <span>Investment Projects</span>
+                  </span>
+                  <span class="text-[10px] text-[#bfa181] opacity-0 group-hover/item:opacity-100 group-hover/item:translate-x-0.5 transition-all">↗</span>
+                </a>
+                <a href="palm-valley.html" class="dropdown-link group/item flex items-center justify-between px-3 py-2 rounded-xl text-xs text-white/85 hover:text-white hover:bg-white/10 transition-colors">
+                  <span class="flex items-center gap-2">
+                    <span class="w-1.5 h-1.5 rounded-full bg-[#bfa181]"></span>
+                    <span>Palm Valley</span>
+                  </span>
+                  <span class="text-[10px] text-[#bfa181] opacity-0 group-hover/item:opacity-100 group-hover/item:translate-x-0.5 transition-all">↗</span>
+                </a>
+                <a href="projects.html#upcoming" class="dropdown-link group/item flex items-center justify-between px-3 py-2 rounded-xl text-xs text-white/85 hover:text-white hover:bg-white/10 transition-colors">
+                  <span class="flex items-center gap-2">
+                    <span class="w-1.5 h-1.5 rounded-full bg-amber-400"></span>
+                    <span>Upcoming Projects</span>
+                  </span>
+                  <span class="text-[10px] text-[#bfa181] opacity-0 group-hover/item:opacity-100 group-hover/item:translate-x-0.5 transition-all">↗</span>
+                </a>
+                <a href="projects.html#completed" class="dropdown-link group/item flex items-center justify-between px-3 py-2 rounded-xl text-xs text-white/85 hover:text-white hover:bg-white/10 transition-colors">
+                  <span class="flex items-center gap-2">
+                    <span class="w-1.5 h-1.5 rounded-full bg-purple-400"></span>
+                    <span>Completed Projects</span>
+                  </span>
+                  <span class="text-[10px] text-[#bfa181] opacity-0 group-hover/item:opacity-100 group-hover/item:translate-x-0.5 transition-all">↗</span>
+                </a>
+                <a href="teak-village.html" class="dropdown-link group/item flex items-center justify-between px-3 py-2 rounded-xl text-xs text-white/85 hover:text-white hover:bg-white/10 transition-colors">
+                  <span class="flex items-center gap-2">
+                    <span class="w-1.5 h-1.5 rounded-full bg-[#bfa181]"></span>
+                    <span>Teak Village</span>
+                  </span>
+                  <span class="text-[10px] text-[#bfa181] opacity-0 group-hover/item:opacity-100 group-hover/item:translate-x-0.5 transition-all">↗</span>
+                </a>
+                <a href="vistara-valley.html" class="dropdown-link group/item flex items-center justify-between px-3 py-2 rounded-xl text-xs text-white/85 hover:text-white hover:bg-white/10 transition-colors">
+                  <span class="flex items-center gap-2">
+                    <span class="w-1.5 h-1.5 rounded-full bg-[#bfa181]"></span>
+                    <span>Vistara Valley</span>
+                  </span>
+                  <span class="text-[10px] text-[#bfa181] opacity-0 group-hover/item:opacity-100 group-hover/item:translate-x-0.5 transition-all">↗</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. Invesmart -->
+        <a href="invesmart.html" class="nav-item-link px-2.5 xl:px-3.5 py-1.5 rounded-full transition text-white/80 hover:text-white hover:bg-white/10 font-medium">Invesmart</a>
+
+        <!-- 4. Gallery -->
+        <a href="gallery.html" class="nav-item-link px-2.5 xl:px-3.5 py-1.5 rounded-full transition text-white/80 hover:text-white hover:bg-white/10 font-medium">Gallery</a>
+
+        <!-- 5. About Us -->
+        <a href="about.html" class="nav-item-link px-2.5 xl:px-3.5 py-1.5 rounded-full transition text-white/80 hover:text-white hover:bg-white/10 font-medium">About Us</a>
+
+        <!-- 6. Contact Us -->
+        <a href="contact.html" class="nav-item-link px-2.5 xl:px-3.5 py-1.5 rounded-full transition text-white/80 hover:text-white hover:bg-white/10 font-medium">Contact Us</a>
+
+        <!-- 7. Blogs -->
+        <a href="blog.html" class="nav-item-link px-2.5 xl:px-3.5 py-1.5 rounded-full transition text-white/80 hover:text-white hover:bg-white/10 font-medium">Blogs</a>
+
+        <!-- 8. Careers -->
+        <a href="careers.html" class="nav-item-link px-2.5 xl:px-3.5 py-1.5 rounded-full transition text-white/80 hover:text-white hover:bg-white/10 font-medium">Careers</a>
+      </nav>
+
+      <!-- Right: Premium CTA Button (Enquire Now) & Mobile Hamburger -->
+      <div class="flex items-center gap-2.5 shrink-0">
+        <a href="#contact" onclick="openContactModal(event)" class="contact-trigger hidden sm:inline-flex items-center gap-1.5 px-4.5 xl:px-5 py-2.5 rounded-full text-[11px] xl:text-xs tracking-[0.16em] uppercase text-black font-semibold bg-gradient-to-r from-[#bfa181] via-[#d6bc9f] to-[#bfa181] hover:from-[#d6bc9f] hover:to-[#bfa181] transition-all duration-300 shadow-[0_4px_20px_rgba(191,161,129,0.35)] hover:shadow-[0_6px_25px_rgba(191,161,129,0.5)] hover:scale-[1.02] cursor-pointer whitespace-nowrap">
+          <span>Enquire Now</span>
+          <span class="inline-block transition-transform duration-300 font-normal">↗</span>
+        </a>
+
+        <!-- Hamburger toggle button -->
+        <button id="open-menu-btn" class="lg:hidden w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-white/10 transition shrink-0" aria-label="Open navigation menu">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <line x1="3" y1="7" x2="21" y2="7"></line>
+            <line x1="3" y1="17" x2="21" y2="17"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <section class="relative min-h-[55vh] flex items-center py-20 px-4 sm:px-8 overflow-hidden bg-slate-900 text-white">
+    <div class="absolute inset-0 -z-10">
+      <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=1920&q=85" alt="Teak Village Agro Retreat" class="w-full h-full object-cover filter brightness-[0.4]" />
+      <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-900/60 to-transparent"></div>
+    </div>
+    <div class="max-w-4xl mx-auto text-center space-y-4">
+      <span class="text-xs uppercase tracking-wider text-emerald-400 font-bold block">Managed Eco-Luxury Farmland</span>
+      <h1 class="text-4xl sm:text-6xl font-serif text-white font-bold">Teak Village Estate</h1>
+      <p class="text-sm sm:text-base text-slate-200 max-w-xl mx-auto font-light leading-relaxed">
+        Own productive, professionally managed teak plantation farmland that matures into multi-generational timber wealth while serving as your private weekend sanctuary.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-20 bg-slate-50">
+    <div class="max-w-6xl mx-auto px-4 sm:px-8">
+      <div class="grid md:grid-cols-3 gap-6 mb-16">
+        <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm reveal-up luxury-card-hover">
+          <h3 class="text-xl font-serif text-slate-900 mb-2 font-bold">Scientific Agro-Management</h3>
+          <p class="text-xs text-slate-600 leading-relaxed">Drip irrigation, soil enrichment, and expert forestry management handled entirely by our team.</p>
+        </div>
+        <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm reveal-up luxury-card-hover">
+          <h3 class="text-xl font-serif text-slate-900 mb-2 font-bold">High Timber Value</h3>
+          <p class="text-xs text-slate-600 leading-relaxed">Teakwood commands premium commodity market valuations upon maturity, generating significant capital return.</p>
+        </div>
+        <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm reveal-up luxury-card-hover">
+          <h3 class="text-xl font-serif text-slate-900 mb-2 font-bold">Weekend Agro Cottages</h3>
+          <p class="text-xs text-slate-600 leading-relaxed">Provision to set up wooden cottages, organic vegetable farming, and spend serene weekends with family.</p>
+        </div>
+      </div>
+
+      <div class="bg-white p-8 sm:p-12 rounded-3xl border border-slate-200 text-center max-w-2xl mx-auto space-y-4 shadow-sm reveal-scale luxury-card-hover">
+        <h2 class="text-3xl font-serif text-slate-900 font-bold">Enquire About Teak Village</h2>
+        <p class="text-xs text-slate-600">Farmland units starting from 0.5 Acres. Book a weekend farm tour.</p>
+        <div class="pt-2 flex flex-col sm:flex-row justify-center gap-4">
+          <a href="tel:+919100024000" class="px-8 py-3.5 rounded-full bg-emerald-600 text-white text-xs font-bold uppercase tracking-wider shadow-md hover:bg-emerald-700 transition">
+            Call +91 91000 24000
+          </a>
+          <a href="https://wa.me/919100024000?text=Hi%20Viseshta%20Group,%20I%20am%20interested%20in%20Teak%20Village%20Managed%20Farmland." target="_blank" rel="noreferrer" class="px-8 py-3.5 rounded-full border border-slate-300 text-slate-700 text-xs font-bold uppercase tracking-wider hover:border-emerald-600 hover:text-emerald-600 transition">
+            Chat on WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="py-10 bg-[#0f172a] text-center text-xs text-slate-400 border-t border-slate-800">
+    <p>© 2026 Viseshta Group. Founded 2018. Hyderabad, Telangana.</p>
+  </footer>
+<script>
+    // Projects Dropdown Click Toggle & Outside Click Handler
+    const projectsDropdownBtn = document.getElementById('projects-dropdown-btn');
+    const projectsDropdownContainer = document.getElementById('projects-dropdown-container');
+
+    if (projectsDropdownBtn && projectsDropdownContainer) {
+      projectsDropdownBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const isOpen = projectsDropdownContainer.classList.toggle('open');
+        projectsDropdownBtn.setAttribute('aria-expanded', isOpen);
+      });
+
+      document.addEventListener('click', (e) => {
+        if (!projectsDropdownContainer.contains(e.target)) {
+          projectsDropdownContainer.classList.remove('open');
+          projectsDropdownBtn.setAttribute('aria-expanded', 'false');
+        }
+      });
+    }
+
+    // Mobile Projects Accordion Toggle
+    const mobileProjectsBtn = document.getElementById('mobile-projects-btn');
+    const mobileProjectsAccordion = document.getElementById('mobile-projects-accordion');
+
+    if (mobileProjectsBtn && mobileProjectsAccordion) {
+      mobileProjectsBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const isExpanded = mobileProjectsAccordion.classList.toggle('expanded');
+        mobileProjectsBtn.classList.toggle('expanded', isExpanded);
+      });
+    }
+
+    // Fallback for openContactModal if modal not in current DOM
+    if (typeof window.openContactModal !== 'function') {
+      window.openContactModal = function(e) {
+        if (e) e.preventDefault();
+        const modal = document.getElementById('contact-modal');
+        if (modal) {
+          modal.classList.add('active');
+          document.body.style.overflow = 'hidden';
+        } else {
+          window.location.href = 'contact.html';
+        }
+      };
+    }
+</script>
+<script>
+    const openMenuBtn = document.getElementById('open-menu-btn');
+    const closeMenuBtn = document.getElementById('close-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileMenuCloses = document.querySelectorAll('.mobile-menu-close');
+
+    if (openMenuBtn && mobileMenu) {
+      openMenuBtn.addEventListener('click', () => {
+        mobileMenu.classList.remove('translate-x-full', 'pointer-events-none');
+        document.body.style.overflow = 'hidden';
+      });
+    }
+    if (closeMenuBtn && mobileMenu) {
+      closeMenuBtn.addEventListener('click', () => {
+        mobileMenu.classList.add('translate-x-full', 'pointer-events-none');
+        document.body.style.overflow = '';
+      });
+    }
+    mobileMenuCloses.forEach(el => el.addEventListener('click', () => {
+      if (mobileMenu) {
+        mobileMenu.classList.add('translate-x-full', 'pointer-events-none');
+        document.body.style.overflow = '';
+      }
+    }));
+    </script>
+  <script type="module" src="animations.js"></script>
+</body>
+</html>
