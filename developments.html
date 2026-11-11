@@ -12,9 +12,152 @@
 </head>
 <body class="bg-[#0e0d0b] text-white">
 
+  <!-- Starting Flash Screen (000 to 100 Counter) - Luxury Architectural Full-Screen Presentation -->
+  <div id="page-loader" class="fixed inset-0 z-[100] text-white flex flex-col justify-between p-6 sm:p-12">
+    <!-- 100% Full-Screen Cinematic Architectural Background Image -->
+    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1920&q=85" alt="VISESHTA AVENUES Flash Screen" class="flash-bg-image">
+
+    <!-- Ambient Center Radial Highlight & Vignette Overlays -->
+    <div class="absolute inset-0 bg-gradient-to-b from-[#0a1c40]/80 via-[#071738]/85 to-[#040d1f]/95 pointer-events-none z-[1]"></div>
+    <div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_45%,rgba(49,98,172,0.45)_0%,transparent_70%)] pointer-events-none z-[2]"></div>
+
+    <!-- Golden Glowing Linear Progress Bar along bottom edge -->
+    <div id="flash-progress-bar" class="flash-progress-bar"></div>
+
+    <div class="relative z-10 flex justify-between items-center text-[10px] sm:text-xs tracking-[0.28em] uppercase text-white/70 font-light">
+      <div class="flex items-center gap-3">
+        <span class="font-medium tracking-[0.3em] text-[#bfa181]">VISESHTA AVENUES</span>
+        <span class="hidden md:inline text-white/30">|</span>
+        <span class="hidden md:inline text-white/50">ARCHITECTURE &amp; RESIDENCES</span>
+      </div>
+      <div class="flex items-center gap-3">
+        <button type="button" onclick="toggleFlashFullscreen(event)" class="flash-fullscreen-btn" title="Toggle Fullscreen">
+          <svg class="w-3.5 h-3.5 text-[#bfa181]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"/></svg>
+          <span class="flash-fullscreen-btn-text">Fullscreen ⛶</span>
+        </button>
+        <span class="text-white/50 text-[10px] sm:text-xs tracking-[0.2em]">EST. 2014</span>
+      </div>
+    </div>
+
+    <!-- Center Luxury Logo Presentation (Full Screen Architectural Flash Screen) -->
+    <div class="relative z-10 text-center my-auto flex flex-col items-center select-none">
+      <!-- Architectural Medallion Showcase with Layered Glow & Gold Hairline Rings -->
+      <div class="relative w-32 h-32 sm:w-36 sm:h-36 flex items-center justify-center mb-6 group">
+        <!-- Concentric Gold Compass Ring -->
+        <div class="absolute inset-0 rounded-full border border-[#bfa181]/40 scale-100 animate-[spin_60s_linear_infinite]"></div>
+        <div class="absolute inset-2 rounded-full border border-dashed border-white/20 scale-95"></div>
+        <div class="absolute -inset-2 rounded-full bg-[#3162ac]/30 blur-2xl animate-pulse"></div>
+
+        <!-- Center Frosted Sapphire Plaque -->
+        <div class="relative w-24 h-24 sm:w-28 sm:h-28 rounded-2xl bg-gradient-to-br from-[#1b4382]/95 via-[#102a5c]/90 to-[#081735]/95 backdrop-blur-2xl border border-[#bfa181]/50 flex items-center justify-center shadow-[0_0_50px_rgba(49,98,172,0.7),inset_0_1px_1px_rgba(255,255,255,0.4)]">
+          <!-- Viseshta Architectural Emblem SVG -->
+          <svg width="56" height="56" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" class="drop-shadow-[0_4px_12px_rgba(0,0,0,0.5)]">
+            <rect x="4" y="4" width="40" height="40" rx="8" fill="#3162AC"/>
+            <path d="M10 8L24 37L38 8H31.5L24 24.5L16.5 8H10Z" fill="white"/>
+            <line x1="18" y1="28" x2="30" y2="28" stroke="white" stroke-width="2" stroke-linecap="round"/>
+            <line x1="19.5" y1="32" x2="28.5" y2="32" stroke="white" stroke-width="2" stroke-linecap="round"/>
+            <line x1="21" y1="36" x2="27" y2="36" stroke="white" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </div>
+      </div>
+
+      <!-- Elevated Brand Typography with Bronze Architectural Divider -->
+      <div class="text-white font-bold text-3xl sm:text-4xl tracking-[0.24em] uppercase font-sans drop-shadow-lg">
+        VISESHTA
+      </div>
+      
+      <!-- Architectural Diamond Divider -->
+      <div class="flex items-center gap-3 my-2.5 w-48">
+        <div class="h-px flex-1 bg-gradient-to-r from-transparent via-[#bfa181] to-[#bfa181]"></div>
+        <div class="w-1.5 h-1.5 rotate-45 bg-[#bfa181] shadow-[0_0_8px_#bfa181]"></div>
+        <div class="h-px flex-1 bg-gradient-to-l from-transparent via-[#bfa181] to-[#bfa181]"></div>
+      </div>
+
+      <div class="text-[#bfa181] text-xs sm:text-sm tracking-[0.45em] uppercase font-medium">
+        AVENUES
+      </div>
+      <div class="text-white/40 text-[10px] tracking-[0.3em] uppercase mt-1">
+        Master Planned Sanctuaries
+      </div>
+    </div>
+
+    <!-- Bottom Bar: Footprint & Counter -->
+    <div class="relative z-10 flex justify-between items-end border-t border-white/15 pt-6">
+      <div>
+        <div class="text-[10px] sm:text-[11px] tracking-[0.25em] uppercase text-white/50 font-light">
+          Tashkent · Dubai · Almaty · London
+        </div>
+        <div class="text-[9px] tracking-[0.2em] text-[#bfa181]/80 mt-1 uppercase hidden sm:block">
+          Pinnacle Living Experience
+        </div>
+      </div>
+      <div class="font-mono text-4xl sm:text-6xl font-light text-[#bfa181] tabular-nums drop-shadow-md" id="loader-counter">
+        000
+      </div>
+    </div>
+  </div>
+
+  <!-- Immediate Execution Script for Instant 100% Full Screen Flash Experience -->
+  <script>
+    (function() {
+      document.documentElement.classList.add('flash-active');
+      if (document.body) document.body.classList.add('flash-active');
+      window.toggleFlashFullscreen = function(e) {
+        if (e) e.stopPropagation();
+        if (!document.fullscreenElement) {
+          var doc = document.documentElement;
+          if (doc.requestFullscreen) doc.requestFullscreen().catch(function(){});
+          else if (doc.webkitRequestFullscreen) doc.webkitRequestFullscreen();
+          else if (doc.msRequestFullscreen) doc.msRequestFullscreen();
+        } else {
+          if (document.exitFullscreen) document.exitFullscreen().catch(function(){});
+        }
+      };
+      function updateFsBtns() {
+        var isFs = !!document.fullscreenElement;
+        var els = document.querySelectorAll('.flash-fullscreen-btn-text');
+        for (var i = 0; i < els.length; i++) {
+          els[i].textContent = isFs ? 'Exit Fullscreen ✕' : 'Fullscreen ⛶';
+        }
+      }
+      document.addEventListener('fullscreenchange', updateFsBtns);
+      var loader = document.getElementById('page-loader');
+      var counter = document.getElementById('loader-counter');
+      var bar = document.getElementById('flash-progress-bar');
+      if (loader && !window.__flashTimerStarted) {
+        window.__flashTimerStarted = true;
+        var cur = 0;
+        var timer = setInterval(function() {
+          cur += Math.floor(Math.random() * 6) + 3;
+          if (cur >= 100) {
+            cur = 100;
+            if (counter) counter.textContent = '100';
+            if (bar) bar.style.width = '100%';
+            clearInterval(timer);
+            // Pause briefly at 100%, then slowly slide up over 1.8 seconds
+            setTimeout(function() {
+              loader.classList.add('loaded');
+              // After slow slide-up finishes (1800ms), open the website
+              setTimeout(function() {
+                loader.classList.add('dismissed');
+                document.documentElement.classList.remove('flash-active');
+                if (document.body) document.body.classList.remove('flash-active');
+                var h = document.getElementById('site-header');
+                if (h) h.classList.remove('-translate-y-full', 'opacity-0');
+                document.dispatchEvent(new CustomEvent('pageLoaderCompleted'));
+              }, 1800);
+            }, 350);
+          } else {
+            if (counter) counter.textContent = ('00' + cur).slice(-3);
+            if (bar) bar.style.width = cur + '%';
+          }
+        }, 32);
+      }
+    })();
+  </script>
+
   <!-- Mobile Full-Screen Menu Drawer -->
-  <div id="mobile-menu" class="fixed inset-0 z-50 bg-[#121110]/98 backdrop-blur-2xl text-[#f5f2eb] flex flex-col justify-between p-6 sm:p-8 translate-x-full transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] pointer-events-none overflow-y-auto">
-    <!-- Top Bar: Logo & Close Button -->
+  <div id="mobile-menu" class="fixed inset-0 z-50 bg-[#121110] text-[#f5f2eb] flex flex-col justify-between p-6 sm:p-8 translate-x-full transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] pointer-events-none overflow-y-auto">
     <div class="flex items-center justify-between border-b border-white/10 pb-4 shrink-0">
       <a href="index.html" class="flex items-center mobile-menu-close">
         <div class="bg-white/95 px-3 py-1.5 rounded-lg flex items-center shadow-sm">
@@ -45,7 +188,7 @@
           </svg>
         </button>
         <!-- Projects Accordion Content -->
-        <div id="mobile-projects-accordion" class="mobile-accordion-content pl-3 flex flex-col gap-2 font-sans text-sm">
+        <div id="mobile-projects-accordion" class="mobile-accordion-content pl-3 flex flex-col gap-2 font-sans text-sm open">
           <a href="projects.html#ongoing" class="mobile-menu-close py-1.5 text-white/70 hover:text-white flex items-center gap-2 border-l border-white/10 pl-3">
             <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
             <span>Ongoing Projects</span>
@@ -233,7 +376,7 @@
           <span class="inline-block transition-transform duration-300 font-normal">↗</span>
         </a>
 
-        <!-- Hamburger toggle button -->
+        <!-- Hamburger button -->
         <button id="open-menu-btn" class="lg:hidden w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-white/10 transition shrink-0" aria-label="Open navigation menu">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
             <line x1="3" y1="7" x2="21" y2="7"></line>
@@ -243,19 +386,65 @@
       </div>
     </div>
   </header>
+        </button>
+      </div>
+    </div>
+  </header>
 
-  <!-- DEVELOPMENTS CATEGORY HERO SECTION -->
-  <section class="relative min-h-[85vh] w-full overflow-hidden flex flex-col justify-end pt-36 pb-16 px-5 sm:px-8 lg:px-12">
-    <!-- Atmospheric Hero Image -->
-    <div class="absolute inset-0 -z-10 overflow-hidden">
-      <img 
-        src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=1800&q=85" 
-        alt="Architectural High-Rise Tower at Dusk" 
-        class="w-full h-full object-cover object-center scale-105 transition-transform duration-1000"
-      />
-      <!-- Soft dark gradient overlay -->
-      <div class="absolute inset-0 bg-gradient-to-t from-[#0e0d0b] via-[#0e0d0b]/60 to-[#0e0d0b]/65"></div>
-      <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_30%,rgba(14,13,11,0.65)_100%)]"></div>
+  <!-- DEVELOPMENTS CATEGORY HERO SECTION (5-Image Smooth 5s Slideshow) -->
+  <section class="hero-section relative isolate z-0 min-h-[90vh] w-full overflow-hidden flex flex-col justify-end pt-36 pb-16 px-5 sm:px-8 lg:px-12">
+    <!-- 5-Image Slideshow Background (Changes Every 5 Seconds with Smooth Ken Burns / 3D Cinematic Animation) -->
+    <div id="hero-bg-container" class="absolute inset-0 z-0 overflow-hidden pointer-events-none" style="perspective: 1200px; transform-style: preserve-3d;">
+      <!-- Slide 1: Towering Architectural High-Rise at Dusk -->
+      <div class="hero-slide active" data-caption="AURELIA TOWER — Handover Q2 2027 · Tashkent City">
+        <img 
+          src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=1920&q=85" 
+          alt="AURELIA TOWER — Handover Q2 2027 · Tashkent City" 
+          class="hero-slide-img w-full h-full object-cover object-center will-change-transform"
+        />
+      </div>
+
+      <!-- Slide 2: Geometric Glass & Steel Skyscraper -->
+      <div class="hero-slide" data-caption="THE MERIDIAN SPIRE — 64 Floors of Engineered Precision">
+        <img 
+          src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1920&q=85" 
+          alt="THE MERIDIAN SPIRE — 64 Floors of Engineered Precision" 
+          class="hero-slide-img w-full h-full object-cover object-center will-change-transform"
+        />
+      </div>
+
+      <!-- Slide 3: Landmark Construction & Engineering -->
+      <div class="hero-slide" data-caption="FORUM PLAZA RESIDENCES — Master-Planned Urban Landmark">
+        <img 
+          src="https://images.unsplash.com/photo-1577495508048-b635879837f1?w=1920&q=85" 
+          alt="FORUM PLAZA RESIDENCES — Master-Planned Urban Landmark" 
+          class="hero-slide-img w-full h-full object-cover object-center will-change-transform"
+        />
+      </div>
+
+      <!-- Slide 4: Master-Planned Architectural Development -->
+      <div class="hero-slide" data-caption="THE ARCHITECTURAL ATRIUM — Integrated Mixed-Use High-Rise">
+        <img 
+          src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=1920&q=85" 
+          alt="THE ARCHITECTURAL ATRIUM — Integrated Mixed-Use High-Rise" 
+          class="hero-slide-img w-full h-full object-cover object-center will-change-transform"
+        />
+      </div>
+
+      <!-- Slide 5: Horizon Heights Contemporary High-Rise -->
+      <div class="hero-slide" data-caption="HORIZON HEIGHTS — Next-Generation Sustainable Towers">
+        <img 
+          src="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1920&q=85" 
+          alt="HORIZON HEIGHTS — Next-Generation Sustainable Towers" 
+          class="hero-slide-img w-full h-full object-cover object-center will-change-transform"
+        />
+      </div>
+
+      <!-- Soft dark gradient overlay for crystal clear text readability while showing vivid imagery -->
+      <div class="absolute inset-0 bg-gradient-to-t from-[#0e0d0b] via-[#0e0d0b]/35 to-black/20 z-[3] pointer-events-none"></div>
+      <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_40%,rgba(14,13,11,0.45)_100%)] z-[3] pointer-events-none"></div>
+      <!-- Atmospheric 3D light sheen -->
+      <div class="hero-light-sheen absolute -inset-y-20 -left-1/3 w-2/3 bg-gradient-to-r from-transparent via-white/10 to-transparent pointer-events-none z-[4]"></div>
     </div>
 
     <div class="relative max-w-7xl mx-auto w-full">
@@ -270,14 +459,14 @@
         Landmarks in progress, shaped from <span class="italic text-[#f5f2eb]">first sketch.</span>
       </h1>
 
-      <p class="text-white/80 text-base sm:text-lg max-w-2xl font-light leading-relaxed mb-10">
+      <p class="text-white/80 text-base sm:text-lg max-w-2xl font-light leading-relaxed mb-8">
         From groundbreaking to final handover — a master-planned portfolio of residential developments defined by architectural discipline and generational value.
       </p>
 
       <!-- Metric Badges -->
-      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-3xl">
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-3xl mb-8">
         <div class="bg-white/10 backdrop-blur-md p-4 rounded-xl border border-white/15">
-          <p class="text-2xl font-medium text-white" data-counter-target="12">12</p>
+          <p class="text-2xl font-medium text-white">12</p>
           <p class="text-[10px] tracking-wider uppercase text-white/60">Delivered Projects</p>
         </div>
         <div class="bg-white/10 backdrop-blur-md p-4 rounded-xl border border-white/15">
@@ -285,12 +474,29 @@
           <p class="text-[10px] tracking-wider uppercase text-white/60">Next Handover</p>
         </div>
         <div class="bg-white/10 backdrop-blur-md p-4 rounded-xl border border-white/15">
-          <p class="text-2xl font-medium text-white" data-counter-target="420" data-counter-prefix="$" data-counter-suffix="K">$420K</p>
+          <p class="text-2xl font-medium text-white">$420K</p>
           <p class="text-[10px] tracking-wider uppercase text-white/60">Starting Price</p>
         </div>
         <div class="bg-white/10 backdrop-blur-md p-4 rounded-xl border border-white/15">
-          <p class="text-2xl font-medium text-[#bfa181]" data-counter-target="100" data-counter-suffix="%">100%</p>
+          <p class="text-2xl font-medium text-[#bfa181]">100%</p>
           <p class="text-[10px] tracking-wider uppercase text-white/60">Architectural Freehold</p>
+        </div>
+      </div>
+
+      <!-- 5 Slide Smooth 5s Transition Indicators & Dynamic Caption -->
+      <div class="flex flex-wrap items-center justify-between gap-4 pt-6 border-t border-white/15">
+        <div class="flex items-center gap-3">
+          <span class="text-[10px] tracking-[0.25em] uppercase text-white/50 font-mono" id="hero-slide-num">01 / 05</span>
+          <div class="flex items-center gap-1.5" id="hero-indicators">
+            <button type="button" class="hero-dot active cursor-pointer" data-slide="0" aria-label="Slide 1"></button>
+            <button type="button" class="hero-dot cursor-pointer" data-slide="1" aria-label="Slide 2"></button>
+            <button type="button" class="hero-dot cursor-pointer" data-slide="2" aria-label="Slide 3"></button>
+            <button type="button" class="hero-dot cursor-pointer" data-slide="3" aria-label="Slide 4"></button>
+            <button type="button" class="hero-dot cursor-pointer" data-slide="4" aria-label="Slide 5"></button>
+          </div>
+        </div>
+        <div class="text-[11px] tracking-[0.2em] uppercase text-[#bfa181] font-medium" id="hero-caption-text">
+          AURELIA TOWER — Handover Q2 2027 · Tashkent City
         </div>
       </div>
     </div>
@@ -311,7 +517,7 @@
       <!-- Development Projects Cards -->
       <div class="space-y-16">
         <!-- Project 1: Aurelia Residences -->
-        <div class="grid lg:grid-cols-12 gap-8 items-center bg-[#f8f7f4] rounded-3xl overflow-hidden p-8 lg:p-12 border border-black/5 reveal-up luxury-card-hover">
+        <div class="grid lg:grid-cols-12 gap-8 items-center bg-[#f8f7f4] rounded-3xl overflow-hidden p-8 lg:p-12 border border-black/5">
           <div class="lg:col-span-7">
             <div class="relative overflow-hidden rounded-2xl h-[420px]">
               <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1000&q=80" alt="Aurelia Residences" class="w-full h-full object-cover img-scale">
@@ -349,14 +555,14 @@
             </div>
 
             <div class="mt-8 flex gap-4">
-              <a href="#contact" onclick="openContactModal(event)" class="contact-trigger btn-primary-bronze flex-1 text-center py-3.5 rounded-full text-xs tracking-widest uppercase font-medium text-white">Download Brochure</a>
-              <a href="#contact" onclick="openContactModal(event)" class="contact-trigger btn-outline flex-1 text-center py-3.5 rounded-full text-xs tracking-widest uppercase font-medium text-black">Private Briefing</a>
+              <a href="#contact" onclick="openContactModal(event)" class="contact-trigger" class="btn-primary-bronze flex-1 text-center py-3.5 rounded-full text-xs tracking-widest uppercase font-medium text-white">Download Brochure</a>
+              <a href="#contact" onclick="openContactModal(event)" class="contact-trigger" class="btn-outline flex-1 text-center py-3.5 rounded-full text-xs tracking-widest uppercase font-medium text-black">Private Briefing</a>
             </div>
           </div>
         </div>
 
         <!-- Project 2: Monument -->
-        <div class="grid lg:grid-cols-12 gap-8 items-center bg-[#f8f7f4] rounded-3xl overflow-hidden p-8 lg:p-12 border border-black/5 reveal-up luxury-card-hover">
+        <div class="grid lg:grid-cols-12 gap-8 items-center bg-[#f8f7f4] rounded-3xl overflow-hidden p-8 lg:p-12 border border-black/5">
           <div class="lg:col-span-7">
             <div class="relative overflow-hidden rounded-2xl h-[420px]">
               <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=1000&q=80" alt="Monument Dubai Hills" class="w-full h-full object-cover img-scale">
@@ -389,13 +595,13 @@
             </div>
 
             <div class="mt-8 flex gap-4">
-              <a href="#contact" onclick="openContactModal(event)" class="contact-trigger btn-primary-bronze flex-1 text-center py-3.5 rounded-full text-xs tracking-widest uppercase font-medium text-white">Request Floor Plans</a>
+              <a href="#contact" onclick="openContactModal(event)" class="contact-trigger" class="btn-primary-bronze flex-1 text-center py-3.5 rounded-full text-xs tracking-widest uppercase font-medium text-white">Request Floor Plans</a>
             </div>
           </div>
         </div>
 
         <!-- Project 3: Casa North -->
-        <div class="grid lg:grid-cols-12 gap-8 items-center bg-[#f8f7f4] rounded-3xl overflow-hidden p-8 lg:p-12 border border-black/5 reveal-up luxury-card-hover">
+        <div class="grid lg:grid-cols-12 gap-8 items-center bg-[#f8f7f4] rounded-3xl overflow-hidden p-8 lg:p-12 border border-black/5">
           <div class="lg:col-span-7">
             <div class="relative overflow-hidden rounded-2xl h-[420px]">
               <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=1000&q=80" alt="Casa North Almaty" class="w-full h-full object-cover img-scale">
@@ -424,7 +630,7 @@
             </div>
 
             <div class="mt-8 flex gap-4">
-              <a href="#contact" onclick="openContactModal(event)" class="contact-trigger btn-primary-bronze flex-1 text-center py-3.5 rounded-full text-xs tracking-widest uppercase font-medium text-white">Book Site Visit</a>
+              <a href="#contact" onclick="openContactModal(event)" class="contact-trigger" class="btn-primary-bronze flex-1 text-center py-3.5 rounded-full text-xs tracking-widest uppercase font-medium text-white">Book Site Visit</a>
             </div>
           </div>
         </div>
@@ -462,7 +668,7 @@
             <p class="text-white/40 text-xs tracking-widest uppercase mb-4">Company</p>
             <ul class="space-y-2.5 text-white/80">
               <li><a href="about.html" class="hover:text-white transition">About</a></li>
-              <li><a href="#contact" onclick="openContactModal(event)" class="contact-trigger hover:text-white transition">Contact</a></li>
+              <li><a href="#contact" onclick="openContactModal(event)" class="contact-trigger" class="hover:text-white transition">Contact</a></li>
               <li><a href="#" class="hover:text-white transition">Careers</a></li>
               <li><a href="#" class="hover:text-white transition">Press</a></li>
             </ul>
@@ -736,12 +942,8 @@
       }, 400);
     }
 
-    document.addEventListener('click', (e) => {
-      const trigger = e.target.closest('a[href="#contact"], a[href$="#contact"], .contact-trigger');
-      if (trigger) {
-        e.preventDefault();
-        window.openContactModal(e);
-      }
+    document.querySelectorAll('a[href="#contact" onclick="openContactModal(event)"], a[href$="#contact"], .contact-trigger').forEach(el => {
+      el.addEventListener('click', openContactModal);
     });
 
     if (closeContactBtn) closeContactBtn.addEventListener('click', closeContactModal);
@@ -771,53 +973,6 @@
       });
     });
   </script>
-
-<script>
-    // Projects Dropdown Click Toggle & Outside Click Handler
-    const projectsDropdownBtn = document.getElementById('projects-dropdown-btn');
-    const projectsDropdownContainer = document.getElementById('projects-dropdown-container');
-
-    if (projectsDropdownBtn && projectsDropdownContainer) {
-      projectsDropdownBtn.addEventListener('click', (e) => {
-        e.stopPropagation();
-        const isOpen = projectsDropdownContainer.classList.toggle('open');
-        projectsDropdownBtn.setAttribute('aria-expanded', isOpen);
-      });
-
-      document.addEventListener('click', (e) => {
-        if (!projectsDropdownContainer.contains(e.target)) {
-          projectsDropdownContainer.classList.remove('open');
-          projectsDropdownBtn.setAttribute('aria-expanded', 'false');
-        }
-      });
-    }
-
-    // Mobile Projects Accordion Toggle
-    const mobileProjectsBtn = document.getElementById('mobile-projects-btn');
-    const mobileProjectsAccordion = document.getElementById('mobile-projects-accordion');
-
-    if (mobileProjectsBtn && mobileProjectsAccordion) {
-      mobileProjectsBtn.addEventListener('click', (e) => {
-        e.preventDefault();
-        const isExpanded = mobileProjectsAccordion.classList.toggle('expanded');
-        mobileProjectsBtn.classList.toggle('expanded', isExpanded);
-      });
-    }
-
-    // Fallback for openContactModal if modal not in current DOM
-    if (typeof window.openContactModal !== 'function') {
-      window.openContactModal = function(e) {
-        if (e) e.preventDefault();
-        const modal = document.getElementById('contact-modal');
-        if (modal) {
-          modal.classList.add('active');
-          document.body.style.overflow = 'hidden';
-        } else {
-          window.location.href = 'contact.html';
-        }
-      };
-    }
-</script>
-  <script type="module" src="animations.js"></script>
+  <script src="animations.js"></script>
 </body>
 </html>

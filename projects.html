@@ -13,6 +13,150 @@
 </head>
 <body class="bg-white text-slate-900 antialiased selection:bg-blue-100 selection:text-blue-900">
 
+  <!-- Starting Flash Screen (000 to 100 Counter) - Luxury Architectural Full-Screen Presentation -->
+  <div id="page-loader" class="fixed inset-0 z-[100] text-white flex flex-col justify-between p-6 sm:p-12">
+    <!-- 100% Full-Screen Cinematic Architectural Background Image -->
+    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1920&q=85" alt="VISESHTA AVENUES Flash Screen" class="flash-bg-image">
+
+    <!-- Ambient Center Radial Highlight & Vignette Overlays -->
+    <div class="absolute inset-0 bg-gradient-to-b from-[#0a1c40]/80 via-[#071738]/85 to-[#040d1f]/95 pointer-events-none z-[1]"></div>
+    <div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_45%,rgba(49,98,172,0.45)_0%,transparent_70%)] pointer-events-none z-[2]"></div>
+
+    <!-- Golden Glowing Linear Progress Bar along bottom edge -->
+    <div id="flash-progress-bar" class="flash-progress-bar"></div>
+
+    <div class="relative z-10 flex justify-between items-center text-[10px] sm:text-xs tracking-[0.28em] uppercase text-white/70 font-light">
+      <div class="flex items-center gap-3">
+        <span class="font-medium tracking-[0.3em] text-[#bfa181]">VISESHTA AVENUES</span>
+        <span class="hidden md:inline text-white/30">|</span>
+        <span class="hidden md:inline text-white/50">ARCHITECTURE &amp; RESIDENCES</span>
+      </div>
+      <div class="flex items-center gap-3">
+        <button type="button" onclick="toggleFlashFullscreen(event)" class="flash-fullscreen-btn" title="Toggle Fullscreen">
+          <svg class="w-3.5 h-3.5 text-[#bfa181]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"/></svg>
+          <span class="flash-fullscreen-btn-text">Fullscreen ⛶</span>
+        </button>
+        <span class="text-white/50 text-[10px] sm:text-xs tracking-[0.2em]">EST. 2014</span>
+      </div>
+    </div>
+
+    <!-- Center Luxury Logo Presentation (Full Screen Architectural Flash Screen) -->
+    <div class="relative z-10 text-center my-auto flex flex-col items-center select-none">
+      <!-- Architectural Medallion Showcase with Layered Glow & Gold Hairline Rings -->
+      <div class="relative w-32 h-32 sm:w-36 sm:h-36 flex items-center justify-center mb-6 group">
+        <!-- Concentric Gold Compass Ring -->
+        <div class="absolute inset-0 rounded-full border border-[#bfa181]/40 scale-100 animate-[spin_60s_linear_infinite]"></div>
+        <div class="absolute inset-2 rounded-full border border-dashed border-white/20 scale-95"></div>
+        <div class="absolute -inset-2 rounded-full bg-[#3162ac]/30 blur-2xl animate-pulse"></div>
+
+        <!-- Center Frosted Sapphire Plaque -->
+        <div class="relative w-24 h-24 sm:w-28 sm:h-28 rounded-2xl bg-gradient-to-br from-[#1b4382]/95 via-[#102a5c]/90 to-[#081735]/95 backdrop-blur-2xl border border-[#bfa181]/50 flex items-center justify-center shadow-[0_0_50px_rgba(49,98,172,0.7),inset_0_1px_1px_rgba(255,255,255,0.4)]">
+          <!-- Viseshta Architectural Emblem SVG -->
+          <svg width="56" height="56" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" class="drop-shadow-[0_4px_12px_rgba(0,0,0,0.5)]">
+            <rect x="4" y="4" width="40" height="40" rx="8" fill="#3162AC"/>
+            <path d="M10 8L24 37L38 8H31.5L24 24.5L16.5 8H10Z" fill="white"/>
+            <line x1="18" y1="28" x2="30" y2="28" stroke="white" stroke-width="2" stroke-linecap="round"/>
+            <line x1="19.5" y1="32" x2="28.5" y2="32" stroke="white" stroke-width="2" stroke-linecap="round"/>
+            <line x1="21" y1="36" x2="27" y2="36" stroke="white" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </div>
+      </div>
+
+      <!-- Elevated Brand Typography with Bronze Architectural Divider -->
+      <div class="text-white font-bold text-3xl sm:text-4xl tracking-[0.24em] uppercase font-sans drop-shadow-lg">
+        VISESHTA
+      </div>
+      
+      <!-- Architectural Diamond Divider -->
+      <div class="flex items-center gap-3 my-2.5 w-48">
+        <div class="h-px flex-1 bg-gradient-to-r from-transparent via-[#bfa181] to-[#bfa181]"></div>
+        <div class="w-1.5 h-1.5 rotate-45 bg-[#bfa181] shadow-[0_0_8px_#bfa181]"></div>
+        <div class="h-px flex-1 bg-gradient-to-l from-transparent via-[#bfa181] to-[#bfa181]"></div>
+      </div>
+
+      <div class="text-[#bfa181] text-xs sm:text-sm tracking-[0.45em] uppercase font-medium">
+        AVENUES
+      </div>
+      <div class="text-white/40 text-[10px] tracking-[0.3em] uppercase mt-1">
+        Master Planned Sanctuaries
+      </div>
+    </div>
+
+    <!-- Bottom Bar: Footprint & Counter -->
+    <div class="relative z-10 flex justify-between items-end border-t border-white/15 pt-6">
+      <div>
+        <div class="text-[10px] sm:text-[11px] tracking-[0.25em] uppercase text-white/50 font-light">
+          Tashkent · Dubai · Almaty · London
+        </div>
+        <div class="text-[9px] tracking-[0.2em] text-[#bfa181]/80 mt-1 uppercase hidden sm:block">
+          Pinnacle Living Experience
+        </div>
+      </div>
+      <div class="font-mono text-4xl sm:text-6xl font-light text-[#bfa181] tabular-nums drop-shadow-md" id="loader-counter">
+        000
+      </div>
+    </div>
+  </div>
+
+  <!-- Immediate Execution Script for Instant 100% Full Screen Flash Experience -->
+  <script>
+    (function() {
+      document.documentElement.classList.add('flash-active');
+      if (document.body) document.body.classList.add('flash-active');
+      window.toggleFlashFullscreen = function(e) {
+        if (e) e.stopPropagation();
+        if (!document.fullscreenElement) {
+          var doc = document.documentElement;
+          if (doc.requestFullscreen) doc.requestFullscreen().catch(function(){});
+          else if (doc.webkitRequestFullscreen) doc.webkitRequestFullscreen();
+          else if (doc.msRequestFullscreen) doc.msRequestFullscreen();
+        } else {
+          if (document.exitFullscreen) document.exitFullscreen().catch(function(){});
+        }
+      };
+      function updateFsBtns() {
+        var isFs = !!document.fullscreenElement;
+        var els = document.querySelectorAll('.flash-fullscreen-btn-text');
+        for (var i = 0; i < els.length; i++) {
+          els[i].textContent = isFs ? 'Exit Fullscreen ✕' : 'Fullscreen ⛶';
+        }
+      }
+      document.addEventListener('fullscreenchange', updateFsBtns);
+      var loader = document.getElementById('page-loader');
+      var counter = document.getElementById('loader-counter');
+      var bar = document.getElementById('flash-progress-bar');
+      if (loader && !window.__flashTimerStarted) {
+        window.__flashTimerStarted = true;
+        var cur = 0;
+        var timer = setInterval(function() {
+          cur += Math.floor(Math.random() * 6) + 3;
+          if (cur >= 100) {
+            cur = 100;
+            if (counter) counter.textContent = '100';
+            if (bar) bar.style.width = '100%';
+            clearInterval(timer);
+            // Pause briefly at 100%, then slowly slide up over 1.8 seconds
+            setTimeout(function() {
+              loader.classList.add('loaded');
+              // After slow slide-up finishes (1800ms), open the website
+              setTimeout(function() {
+                loader.classList.add('dismissed');
+                document.documentElement.classList.remove('flash-active');
+                if (document.body) document.body.classList.remove('flash-active');
+                var h = document.getElementById('site-header');
+                if (h) h.classList.remove('-translate-y-full', 'opacity-0');
+                document.dispatchEvent(new CustomEvent('pageLoaderCompleted'));
+              }, 1800);
+            }, 350);
+          } else {
+            if (counter) counter.textContent = ('00' + cur).slice(-3);
+            if (bar) bar.style.width = cur + '%';
+          }
+        }, 32);
+      }
+    })();
+  </script>
+
   <!-- Header (Logo Only - No Text Beside Logo) -->
   <!-- Mobile Full-Screen Menu Drawer -->
   <div id="mobile-menu" class="fixed inset-0 z-50 bg-[#121110]/98 backdrop-blur-2xl text-[#f5f2eb] flex flex-col justify-between p-6 sm:p-8 translate-x-full transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] pointer-events-none overflow-y-auto">
@@ -247,16 +391,16 @@
   </header>
 
   <!-- SECTION: HERO SECTION (5-IMAGE 5s SLIDESHOW & PERFECT ZERO-SCROLL POSITIONING) -->
-  <section id="hero" class="relative h-[calc(100vh-80px)] min-h-[580px] max-h-[820px] flex flex-col justify-center items-center overflow-hidden px-4 sm:px-8 lg:px-12 py-3 sm:py-5">
+  <section id="hero" class="hero-section relative isolate z-0 h-[calc(100vh-80px)] min-h-[580px] max-h-[820px] flex flex-col justify-center items-center overflow-hidden px-4 sm:px-8 lg:px-12 py-3 sm:py-5">
     
     <!-- 5-Image Slideshow Background (Changes Every 5 Seconds with Smooth Ken Burns Zoom) -->
-    <div class="absolute inset-0 -z-10 overflow-hidden pointer-events-none">
+    <div id="hero-bg-container" class="absolute inset-0 z-0 overflow-hidden pointer-events-none">
       <!-- Image 1 -->
       <div class="hero-bg-slide active" data-slide="0">
         <img 
           src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1920&q=85" 
           alt="Invesmart Commercial IT Tower · Financial District" 
-          class="w-full h-full object-cover object-center filter brightness-[0.40] contrast-[1.1]"
+          class="w-full h-full object-cover object-center filter brightness-[0.9] contrast-[1.05]"
         />
       </div>
       <!-- Image 2 -->
@@ -264,7 +408,7 @@
         <img 
           src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1920&q=85" 
           alt="Palm Valley · Luxury Plotted Community" 
-          class="w-full h-full object-cover object-center filter brightness-[0.38] contrast-[1.1]"
+          class="w-full h-full object-cover object-center filter brightness-[0.9] contrast-[1.05]"
         />
       </div>
       <!-- Image 3 -->
@@ -272,7 +416,7 @@
         <img 
           src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=1920&q=85" 
           alt="Teak Village · Managed Agro Farmland Retreat" 
-          class="w-full h-full object-cover object-center filter brightness-[0.38] contrast-[1.1]"
+          class="w-full h-full object-cover object-center filter brightness-[0.9] contrast-[1.05]"
         />
       </div>
       <!-- Image 4 -->
@@ -280,7 +424,7 @@
         <img 
           src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=1920&q=85" 
           alt="Vistara Valley · High-Growth Highway Plotted Layout" 
-          class="w-full h-full object-cover object-center filter brightness-[0.38] contrast-[1.1]"
+          class="w-full h-full object-cover object-center filter brightness-[0.9] contrast-[1.05]"
         />
       </div>
       <!-- Image 5 -->
@@ -288,13 +432,13 @@
         <img 
           src="https://images.unsplash.com/photo-1497215728101-856f4ea42174?w=1920&q=85" 
           alt="Grade-A Pre-Leased Commercial Floor Plates" 
-          class="w-full h-full object-cover object-center filter brightness-[0.40] contrast-[1.1]"
+          class="w-full h-full object-cover object-center filter brightness-[0.9] contrast-[1.05]"
         />
       </div>
 
-      <!-- Rich Blue & Navy Gradient Atmosphere for Crisp Text Readability -->
-      <div class="absolute inset-0 bg-gradient-to-t from-[#0a192f] via-[#0b1e3b]/75 to-[#081528]/85"></div>
-      <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(37,99,235,0.28)_0%,transparent_75%)]"></div>
+      <!-- Rich Blue & Navy Gradient Atmosphere for Crisp Text Readability while preserving imagery -->
+      <div class="absolute inset-0 bg-gradient-to-t from-[#0a192f]/85 via-[#0b1e3b]/40 to-[#081528]/50 z-[3] pointer-events-none"></div>
+      <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(37,99,235,0.18)_0%,transparent_75%)] z-[3] pointer-events-none"></div>
     </div>
 
     <!-- Main Hero Text Content (Upward Forward Animated, Perfectly Positioned Without Scroll) -->
@@ -382,7 +526,7 @@
   </section>
 
   <!-- Category Filter Tabs Section -->
-  <section class="py-6 bg-slate-100 border-b border-slate-200 sticky top-16 z-30 shadow-xs" id="projects-grid">
+  <section class="py-6 bg-slate-100 border-b border-slate-200 shadow-xs" id="projects-grid">
     <div class="max-w-7xl mx-auto px-4 sm:px-8 text-center">
       <div class="flex flex-wrap items-center justify-center gap-2">
         <button onclick="filterProjects('all', this)" class="project-tab active px-5 py-2 rounded-full text-xs uppercase tracking-wider font-bold border border-blue-600 bg-blue-600 text-white transition cursor-pointer shadow-xs">All Projects</button>
@@ -704,5 +848,6 @@
       }
     }));
     </script>
+    <script src="animations.js"></script>
 </body>
 </html>

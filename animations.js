@@ -15,6 +15,8 @@
   }
 
   function initAnimations() {
+    initPageLoader();
+    initHeroSlideshow();
     initTopProgressBar();
     initBackToTopButton();
     initRadarPulses();
@@ -24,6 +26,147 @@
     initNumberCounters();
     initInteractiveCards();
     initSmoothAnchors();
+    initNavigation();
+  }
+
+  // 0. Full-Screen Starting Flash Screen / Page Loader
+  function initPageLoader() {
+    const loaderEl = document.getElementById('page-loader');
+    if (!loaderEl) return;
+    if (window.__flashTimerStarted) return;
+    window.__flashTimerStarted = true;
+
+    const counterEl = document.getElementById('loader-counter');
+    const progressBar = document.getElementById('flash-progress-bar');
+
+    // Lock page scroll for true full screen immersive experience
+    document.body.classList.add('flash-active');
+    document.documentElement.classList.add('flash-active');
+
+    // Native Fullscreen toggle handler attached to window for flash screen button
+    window.toggleFlashFullscreen = function (e) {
+      if (e) e.stopPropagation();
+      if (!document.fullscreenElement) {
+        const rootDoc = document.documentElement;
+        if (rootDoc.requestFullscreen) {
+          rootDoc.requestFullscreen().catch(() => {});
+        } else if (rootDoc.webkitRequestFullscreen) {
+          rootDoc.webkitRequestFullscreen();
+        } else if (rootDoc.msRequestFullscreen) {
+          rootDoc.msRequestFullscreen();
+        }
+      } else {
+        if (document.exitFullscreen) {
+          document.exitFullscreen().catch(() => {});
+        }
+      }
+    };
+
+    function updateFullscreenButtons() {
+      const isFs = !!document.fullscreenElement;
+      document.querySelectorAll('.flash-fullscreen-btn-text').forEach(el => {
+        el.textContent = isFs ? 'Exit Fullscreen ✕' : 'Fullscreen ⛶';
+      });
+    }
+
+    document.addEventListener('fullscreenchange', updateFullscreenButtons);
+
+    let count = 0;
+    const interval = setInterval(() => {
+      count += Math.floor(Math.random() * 6) + 3;
+      if (count >= 100) {
+        count = 100;
+        if (counterEl) counterEl.textContent = '100';
+        if (progressBar) progressBar.style.width = '100%';
+        clearInterval(interval);
+        // Pause briefly at 100%, then slowly slide up over 1.8 seconds
+        setTimeout(() => {
+          loaderEl.classList.add('loaded');
+          // After the slow slide-up finishes (1800ms), open website
+          setTimeout(() => {
+            loaderEl.classList.add('dismissed');
+            document.body.classList.remove('flash-active');
+            document.documentElement.classList.remove('flash-active');
+            const header = document.getElementById('site-header');
+            if (header) {
+              header.classList.remove('-translate-y-full', 'opacity-0');
+            }
+            document.dispatchEvent(new CustomEvent('pageLoaderCompleted'));
+          }, 1800);
+        }, 350);
+      } else {
+        if (counterEl) counterEl.textContent = String(count).padStart(3, '0');
+        if (progressBar) progressBar.style.width = count + '%';
+      }
+    }, 32);
+  }
+
+  // 0.1 Universal 5-Image Category Hero Slideshow (Changes smoothly every 5s)
+  function initHeroSlideshow() {
+    const heroSlides = document.querySelectorAll('.hero-slide, .hero-bg-slide');
+    if (!heroSlides || heroSlides.length <= 1) return;
+
+    const heroDots = document.querySelectorAll('.hero-dot, .slide-indicator-bar');
+    const heroCaption = document.getElementById('hero-caption-text') || document.getElementById('caption-text');
+    const heroSlideNum = document.getElementById('hero-slide-num');
+
+    let currentHeroSlide = 0;
+    let heroSlideTimer = null;
+
+    function showHeroSlide(index) {
+      if (!heroSlides.length) return;
+      currentHeroSlide = (index + heroSlides.length) % heroSlides.length;
+
+      heroSlides.forEach((slide, idx) => {
+        if (idx === currentHeroSlide) {
+          slide.classList.add('active');
+        } else {
+          slide.classList.remove('active');
+        }
+      });
+
+      heroDots.forEach((dot, idx) => {
+        if (idx === currentHeroSlide) {
+          dot.classList.add('active');
+        } else {
+          dot.classList.remove('active');
+        }
+      });
+
+      const activeSlide = heroSlides[currentHeroSlide];
+      const captionText = activeSlide.getAttribute('data-caption') || 
+                          (activeSlide.querySelector('img') && activeSlide.querySelector('img').getAttribute('alt'));
+      if (heroCaption && captionText) {
+        heroCaption.textContent = captionText;
+      }
+
+      if (heroSlideNum) {
+        heroSlideNum.textContent = String(currentHeroSlide + 1).padStart(2, '0') + ' / ' + String(heroSlides.length).padStart(2, '0');
+      }
+    }
+
+    function startHeroSlideTimer() {
+      if (heroSlideTimer) clearInterval(heroSlideTimer);
+      heroSlideTimer = setInterval(() => {
+        showHeroSlide(currentHeroSlide + 1);
+      }, 5000); // exactly every 5 seconds smoothly
+    }
+
+    heroDots.forEach((dot, idx) => {
+      dot.addEventListener('click', (e) => {
+        e.preventDefault();
+        showHeroSlide(idx);
+        startHeroSlideTimer();
+      });
+    });
+
+    showHeroSlide(0);
+    startHeroSlideTimer();
+
+    window.changeHeroSlide = function(idx) {
+      showHeroSlide(idx);
+      startHeroSlideTimer();
+    };
   }
 
   // 1. Sleek Top Scroll Reading Progress Bar
@@ -335,5 +478,62 @@
         }
       });
     });
+  }
+
+  // 10. Universal Navigation Handling (Mobile Drawer & Projects Accordion & Dropdown)
+  function initNavigation() {
+    const openMenuBtn = document.getElementById('open-menu-btn');
+    const closeMenuBtn = document.getElementById('close-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileMenuCloses = document.querySelectorAll('.mobile-menu-close');
+
+    if (openMenuBtn && mobileMenu) {
+      openMenuBtn.addEventListener('click', () => {
+        mobileMenu.classList.remove('translate-x-full', 'pointer-events-none');
+        document.body.style.overflow = 'hidden';
+      });
+    }
+
+    if (closeMenuBtn && mobileMenu) {
+      closeMenuBtn.addEventListener('click', () => {
+        mobileMenu.classList.add('translate-x-full', 'pointer-events-none');
+        document.body.style.overflow = '';
+      });
+    }
+
+    mobileMenuCloses.forEach(el => {
+      el.addEventListener('click', () => {
+        if (mobileMenu) {
+          mobileMenu.classList.add('translate-x-full', 'pointer-events-none');
+          document.body.style.overflow = '';
+        }
+      });
+    });
+
+    // Mobile Projects Accordion Toggle
+    const mobileProjectsBtn = document.getElementById('mobile-projects-btn') || document.querySelector('.mobile-accordion-btn');
+    const mobileProjectsAccordion = document.getElementById('mobile-projects-accordion') || document.querySelector('.mobile-accordion-content');
+    if (mobileProjectsBtn && mobileProjectsAccordion) {
+      mobileProjectsBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        mobileProjectsAccordion.classList.toggle('open');
+        mobileProjectsBtn.classList.toggle('open');
+      });
+    }
+
+    // Desktop Projects Dropdown Click/Touch Support
+    const projectsDropdownBtn = document.getElementById('projects-dropdown-btn');
+    const projectsDropdownContainer = document.getElementById('projects-dropdown-container');
+    if (projectsDropdownBtn && projectsDropdownContainer) {
+      projectsDropdownBtn.addEventListener('click', (e) => {
+        projectsDropdownContainer.classList.toggle('open');
+      });
+      document.addEventListener('click', (e) => {
+        if (!projectsDropdownContainer.contains(e.target)) {
+          projectsDropdownContainer.classList.remove('open');
+        }
+      });
+    }
   }
 })();

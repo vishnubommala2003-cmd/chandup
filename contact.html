@@ -247,54 +247,54 @@
   </header>
 
   <!-- SECTION: HERO SECTION (5-IMAGE 5s SLIDESHOW & PERFECT ZERO-SCROLL POSITIONING) -->
-  <section id="hero" class="relative h-[calc(100vh-80px)] min-h-[580px] max-h-[820px] flex flex-col justify-center items-center overflow-hidden px-4 sm:px-8 lg:px-12 py-3 sm:py-5">
+  <section id="hero" class="hero-section relative isolate z-0 h-[calc(100vh-80px)] min-h-[580px] max-h-[820px] flex flex-col justify-center items-center overflow-hidden px-4 sm:px-8 lg:px-12 py-3 sm:py-5">
     
-    <!-- 5-Image Slideshow Background (Changes Every 5 Seconds with Smooth Ken Burns Zoom) -->
-    <div class="absolute inset-0 -z-10 overflow-hidden pointer-events-none">
+    <!-- 5-Image Slideshow Background (Changes Every 5 Seconds with Smooth Ken Burns / 3D Cinematic Animation) -->
+    <div id="hero-bg-container" class="absolute inset-0 z-0 overflow-hidden pointer-events-none" style="perspective: 1200px; transform-style: preserve-3d;">
       <!-- Image 1 -->
-      <div class="hero-bg-slide active" data-slide="0">
+      <div class="hero-slide active" data-caption="Direct Advisory 01 · Corporate Advisory Suite & Reception">
         <img 
           src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=1920&q=85" 
-          alt="Viseshta Corporate Advisory Suite · Hyderabad" 
-          class="w-full h-full object-cover object-center filter brightness-[0.40] contrast-[1.1]"
+          alt="Direct Advisory 01 · Corporate Advisory Suite & Reception" 
+          class="hero-slide-img w-full h-full object-cover object-center will-change-transform"
         />
       </div>
       <!-- Image 2 -->
-      <div class="hero-bg-slide" data-slide="1">
+      <div class="hero-slide" data-caption="Direct Advisory 02 · Financial District & Jubilee Hills Presence">
         <img 
           src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1920&q=85" 
-          alt="Jubilee Hills & Financial District Presence" 
-          class="w-full h-full object-cover object-center filter brightness-[0.38] contrast-[1.1]"
+          alt="Direct Advisory 02 · Financial District & Jubilee Hills Presence" 
+          class="hero-slide-img w-full h-full object-cover object-center will-change-transform"
         />
       </div>
       <!-- Image 3 -->
-      <div class="hero-bg-slide" data-slide="2">
+      <div class="hero-slide" data-caption="Direct Advisory 03 · Dedicated Senior Investment Managers">
         <img 
           src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1920&q=85" 
-          alt="Senior Commercial Advisory & Dedicated Relationship Managers" 
-          class="w-full h-full object-cover object-center filter brightness-[0.38] contrast-[1.1]"
+          alt="Direct Advisory 03 · Dedicated Senior Investment Managers" 
+          class="hero-slide-img w-full h-full object-cover object-center will-change-transform"
         />
       </div>
       <!-- Image 4 -->
-      <div class="hero-bg-slide" data-slide="3">
+      <div class="hero-slide" data-caption="Direct Advisory 04 · Private Portfolio Briefing Lounge">
         <img 
           src="https://images.unsplash.com/photo-1497215728101-856f4ea42174?w=1920&q=85" 
-          alt="Executive Consultation Rooms & Project Briefings" 
-          class="w-full h-full object-cover object-center filter brightness-[0.38] contrast-[1.1]"
+          alt="Direct Advisory 04 · Private Portfolio Briefing Lounge" 
+          class="hero-slide-img w-full h-full object-cover object-center will-change-transform"
         />
       </div>
       <!-- Image 5 -->
-      <div class="hero-bg-slide" data-slide="4">
+      <div class="hero-slide" data-caption="Direct Advisory 05 · Guided On-Site Inspections & Tours">
         <img 
           src="https://images.unsplash.com/photo-1577495508048-b635879837f1?w=1920&q=85" 
-          alt="On-Site Development Tours & Property Visits" 
-          class="w-full h-full object-cover object-center filter brightness-[0.40] contrast-[1.1]"
+          alt="Direct Advisory 05 · Guided On-Site Inspections & Tours" 
+          class="hero-slide-img w-full h-full object-cover object-center will-change-transform"
         />
       </div>
 
-      <!-- Rich Blue & Navy Gradient Atmosphere for Crisp Text Readability -->
-      <div class="absolute inset-0 bg-gradient-to-t from-[#0a192f] via-[#0b1e3b]/75 to-[#081528]/85"></div>
-      <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(37,99,235,0.28)_0%,transparent_75%)]"></div>
+      <!-- Rich Blue & Navy Gradient Atmosphere for Crisp Text Readability & Image Vibrancy -->
+      <div class="absolute inset-0 bg-gradient-to-t from-[#0a192f]/75 via-[#0b1e3b]/40 to-[#081528]/55 z-[3] pointer-events-none"></div>
+      <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(37,99,235,0.20)_0%,transparent_75%)] z-[3] pointer-events-none"></div>
     </div>
 
     <!-- Main Hero Text Content (Upward Forward Animated, Perfectly Positioned Without Scroll) -->

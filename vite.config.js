@@ -1,32 +1,61 @@
-import { resolve } from 'path';
 import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
+import path from 'path';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+// Route clean and .html navigations to React's index.html so legacy root .html files do not shadow SPA routes in dev.
+function spaRouteFallbackPlugin() {
+  return {
+    name: 'spa-route-fallback',
+    configureServer(server) {
+      server.middlewares.use((req, res, next) => {
+        if (req.method !== 'GET' && req.method !== 'HEAD') return next();
+        const accept = req.headers.accept || '';
+        if (!accept.includes('text/html')) return next();
+
+        const pathname = (req.url || '/').split('?')[0];
+        if (
+          pathname.startsWith('/@') ||
+          pathname.startsWith('/__') ||
+          pathname.startsWith('/src/') ||
+          pathname.startsWith('/node_modules/') ||
+          pathname.startsWith('/assets/')
+        ) {
+          return next();
+        }
+
+        const ext = path.posix.extname(pathname);
+        if (ext === '' || ext === '.html') {
+          req.url = '/index.html';
+        }
+        next();
+      });
+    }
+  };
+}
 
 export default defineConfig({
-  build: {
-    rollupOptions: {
-      input: {
-        main: resolve(__dirname, 'index.html'),
-        about: resolve(__dirname, 'about.html'),
-        properties: resolve(__dirname, 'properties.html'),
-        developments: resolve(__dirname, 'developments.html'),
-        locations: resolve(__dirname, 'locations.html'),
-        journal: resolve(__dirname, 'journal.html'),
-        projects: resolve(__dirname, 'projects.html'),
-        invesmart: resolve(__dirname, 'invesmart.html'),
-        gallery: resolve(__dirname, 'gallery.html'),
-        blog: resolve(__dirname, 'blog.html'),
-        careers: resolve(__dirname, 'careers.html'),
-        contact: resolve(__dirname, 'contact.html'),
-        palmValley: resolve(__dirname, 'palm-valley.html'),
-        teakVillage: resolve(__dirname, 'teak-village.html'),
-        vistaraValley: resolve(__dirname, 'vistara-valley.html'),
-        nriDesk: resolve(__dirname, 'nri-desk.html'),
-        landing: resolve(__dirname, 'landing.html'),
-        termsDisclaimer: resolve(__dirname, 'terms-disclaimer.html'),
-        privacyPolicy: resolve(__dirname, 'privacy-policy.html'),
-        thankYou: resolve(__dirname, 'thank-you.html'),
-        notFound: resolve(__dirname, '404.html'),
-      },
-    },
+  plugins: [react(), spaRouteFallbackPlugin()],
+  server: {
+    port: 5174,
+    host: true
   },
+  preview: {
+    port: 5174,
+    host: true
+  },
+  resolve: {
+    alias: {
+      '@app': path.resolve(__dirname, './src/app'),
+      '@modules': path.resolve(__dirname, './src/modules'),
+      '@shared': path.resolve(__dirname, './src/shared'),
+      '@assets': path.resolve(__dirname, './src/assets'),
+      '@services': path.resolve(__dirname, './src/services'),
+      '@contexts': path.resolve(__dirname, './src/contexts'),
+      '@context': path.resolve(__dirname, './src/contexts')
+    }
+  }
 });

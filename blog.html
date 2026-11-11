@@ -247,54 +247,54 @@
   </header>
 
   <!-- SECTION: HERO SECTION (5-IMAGE 5s SLIDESHOW & PERFECT ZERO-SCROLL POSITIONING) -->
-  <section id="hero" class="relative h-[calc(100vh-80px)] min-h-[580px] max-h-[820px] flex flex-col justify-center items-center overflow-hidden px-4 sm:px-8 lg:px-12 py-3 sm:py-5">
+  <section id="hero" class="hero-section relative isolate z-0 h-[calc(100vh-80px)] min-h-[580px] max-h-[820px] flex flex-col justify-center items-center overflow-hidden px-4 sm:px-8 lg:px-12 py-3 sm:py-5">
     
-    <!-- 5-Image Slideshow Background (Changes Every 5 Seconds with Smooth Ken Burns Zoom) -->
-    <div class="absolute inset-0 -z-10 overflow-hidden pointer-events-none">
+    <!-- 5-Image Slideshow Background (Changes Every 5 Seconds with Smooth Ken Burns / 3D Cinematic Animation) -->
+    <div id="hero-bg-container" class="absolute inset-0 z-0 overflow-hidden pointer-events-none" style="perspective: 1200px; transform-style: preserve-3d;">
       <!-- Image 1 -->
-      <div class="hero-bg-slide active" data-slide="0">
+      <div class="hero-slide active" data-caption="Intelligence 01 · Commercial Rental Yield & ROI Analytics">
         <img 
           src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1920&q=85" 
-          alt="Commercial Yield Analytics & Hyderabad Real Estate Trends" 
-          class="w-full h-full object-cover object-center filter brightness-[0.40] contrast-[1.1]"
+          alt="Intelligence 01 · Commercial Rental Yield & ROI Analytics" 
+          class="hero-slide-img w-full h-full object-cover object-center will-change-transform"
         />
       </div>
       <!-- Image 2 -->
-      <div class="hero-bg-slide" data-slide="1">
+      <div class="hero-slide" data-caption="Intelligence 02 · Institutional Grade-A Office Space Trends">
         <img 
           src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1920&q=85" 
-          alt="Institutional Grade-A Office Spaces & Corporate Influx" 
-          class="w-full h-full object-cover object-center filter brightness-[0.38] contrast-[1.1]"
+          alt="Intelligence 02 · Institutional Grade-A Office Space Trends" 
+          class="hero-slide-img w-full h-full object-cover object-center will-change-transform"
         />
       </div>
       <!-- Image 3 -->
-      <div class="hero-bg-slide" data-slide="2">
+      <div class="hero-slide" data-caption="Intelligence 03 · TS-RERA Compliance & Title Verification">
         <img 
           src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1920&q=85" 
-          alt="Legal Due Diligence & RERA Compliance Frameworks" 
-          class="w-full h-full object-cover object-center filter brightness-[0.38] contrast-[1.1]"
+          alt="Intelligence 03 · TS-RERA Compliance & Title Verification" 
+          class="hero-slide-img w-full h-full object-cover object-center will-change-transform"
         />
       </div>
       <!-- Image 4 -->
-      <div class="hero-bg-slide" data-slide="3">
+      <div class="hero-slide" data-caption="Intelligence 04 · Metro Corridor & ORR Growth Catalysts">
         <img 
           src="https://images.unsplash.com/photo-1554469384-e58fac16e23a?w=1920&q=85" 
-          alt="Hyderabad Metro & ORR Infrastructure Expansion" 
-          class="w-full h-full object-cover object-center filter brightness-[0.38] contrast-[1.1]"
+          alt="Intelligence 04 · Metro Corridor & ORR Growth Catalysts" 
+          class="hero-slide-img w-full h-full object-cover object-center will-change-transform"
         />
       </div>
       <!-- Image 5 -->
-      <div class="hero-bg-slide" data-slide="4">
+      <div class="hero-slide" data-caption="Intelligence 05 · Wealth Preservation Through Real Assets">
         <img 
           src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=1920&q=85" 
-          alt="Wealth Preservation & Strategic Commercial Leasing" 
-          class="w-full h-full object-cover object-center filter brightness-[0.40] contrast-[1.1]"
+          alt="Intelligence 05 · Wealth Preservation Through Real Assets" 
+          class="hero-slide-img w-full h-full object-cover object-center will-change-transform"
         />
       </div>
 
-      <!-- Rich Blue & Navy Gradient Atmosphere for Crisp Text Readability -->
-      <div class="absolute inset-0 bg-gradient-to-t from-[#0a192f] via-[#0b1e3b]/75 to-[#081528]/85"></div>
-      <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(37,99,235,0.28)_0%,transparent_75%)]"></div>
+      <!-- Rich Blue & Navy Gradient Atmosphere for Crisp Text Readability & Image Vibrancy -->
+      <div class="absolute inset-0 bg-gradient-to-t from-[#0a192f]/75 via-[#0b1e3b]/40 to-[#081528]/55 z-[3] pointer-events-none"></div>
+      <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(37,99,235,0.20)_0%,transparent_75%)] z-[3] pointer-events-none"></div>
     </div>
 
     <!-- Main Hero Text Content (Upward Forward Animated, Perfectly Positioned Without Scroll) -->
